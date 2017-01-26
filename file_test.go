@@ -6,7 +6,7 @@ import (
 )
 
 func TestRead(t *testing.T) {
-	fp, err := os.Open("file_test.mid")
+	fp, err := os.Open("testdata/file_test.mid")
 	if err != nil {
 		t.Errorf("cannot read test file: %v", err)
 	}

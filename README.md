@@ -11,7 +11,7 @@ midi
 
 todo
 ====
-- [ ] Extract tempo change table
+- [x] Extract tempo change table
 - [ ] Extract time signature table
 - [ ] Writing SMF file
 
