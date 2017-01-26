@@ -29,13 +29,13 @@ import (
 )
 
 func main() {
-	f, err := os.Open("test.midi")
+	f, err := os.Open("test.mid")
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
 
-	file, err := midi.ReadFile(f)
+	file, err := midi.Read(f)
 	if err != nil {
 		panic(err)
 	}

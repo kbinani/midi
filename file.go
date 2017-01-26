@@ -2,10 +2,6 @@ package midi
 
 import "io"
 
-const (
-	kMThd = 0x4d546864
-)
-
 type File struct {
 	Header FileHeader
 	Tracks []Track

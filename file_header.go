@@ -6,6 +6,10 @@ import (
 	"io"
 )
 
+const (
+	kMThd = 0x4d546864
+)
+
 type FileHeader struct {
 	Format     uint16
 	NumTrack   uint16
