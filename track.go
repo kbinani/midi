@@ -33,7 +33,7 @@ func ReadTrack(from io.Reader) (*Track, error) {
 
 	track := new(Track)
 	var status byte
-	var tick uint64 = 0
+	var tick Tick = 0
 	for proxy.N > 0 {
 		delta, err := readDeltaTime(proxy)
 		if err != nil {
@@ -44,7 +44,7 @@ func ReadTrack(from io.Reader) (*Track, error) {
 			return nil, err
 		}
 		status = next
-		tick += uint64(delta)
+		tick += Tick(delta)
 		event.Tick = tick
 		track.Events = append(track.Events, *event)
 	}

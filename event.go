@@ -8,7 +8,7 @@ import (
 )
 
 type Event struct {
-	Tick     uint64
+	Tick     Tick
 	Messages []byte
 }
 
