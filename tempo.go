@@ -7,7 +7,7 @@ type MicroSecondPerBeat uint32
 type Tempo struct {
 	tick  Tick
 	tempo MicroSecondPerBeat
-	time  big.Rat
+	time  *big.Rat
 }
 
 func (v Tempo) Tick() Tick {
@@ -18,12 +18,13 @@ func (v Tempo) MicroSecondPerBeat() MicroSecondPerBeat {
 	return v.tempo
 }
 
-func (v Tempo) Time() *big.Rat {
-	t := v.time
-	return &t
+func (v Tempo) Sec() *big.Rat {
+	r := new(big.Rat)
+	r.Set(v.time)
+	return r
 }
 
-func (v Tempo) TimeF() float64 {
-	r, _ := v.time.Float64()
-	return r
+func (v Tempo) FSec() float64 {
+	f, _ := v.time.Float64()
+	return f
 }
